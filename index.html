@@ -1,10 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>MaxGamers16</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат для Debian 13 (VM)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #2c3e50; }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #2ea44f;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .download-btn:hover { background: #22863a; }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Привет! Это мой сайт.</h1>
-    <p>Скоро здесь будет чат на Debian.</p>
+    <h1>💬 Чат для виртуальных машин Debian 13</h1>
+    <p>Этот репозиторий содержит простой TCP-чат на Python для общения между виртуальными машинами в локальной сети.</p>
+
+    <h2>📦 Скачать файлы</h2>
+    <p>
+        <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/raw/main/server.py" class="download-btn">⬇ server.py</a>
+        <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/raw/main/client.py" class="download-btn">⬇ client.py</a>
+        <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/raw/main/python-code.rar" class="download-btn">⬇ python-code.rar</a>
+    </p>
+
+    <div class="warning">
+        ⚠️ <strong>Важно:</strong> Для работы чата обе виртуальные машины должны находиться в одной сети (например, в VirtualBox настроен "Сетевой мост" или внутренняя сеть).
+    </div>
+
+    <h2>🚀 Инструкция по запуску в Debian 13</h2>
+    <ol>
+        <li>Убедитесь, что установлен Python 3:
+            <div class="code-block">sudo apt update && sudo apt install python3 -y</div>
+        </li>
+        <li>Скачайте файлы на обе виртуальные машины (через браузер, curl или общую папку).</li>
+        <li><strong>На сервере (VM1):</strong>
+            <div class="code-block">python3 server.py</div>
+            Вы увидите сообщение "Сервер запущен на порту 12345...".
+        </li>
+        <li><strong>На клиенте (VM2):</strong>
+            <div class="code-block">python3 client.py</div>
+            Введите IP-адрес сервера (узнать его можно командой <code>ip a</code> на сервере) и начинайте общаться.
+        </li>
+    </ol>
+
+    <h2>🛠 Примечания</h2>
+    <ul>
+        <li>Порт 12345 можно изменить в коде (переменная <code>PORT</code>).</li>
+        <li>Если возникают проблемы с подключением, проверьте, что фаервол не блокирует порт:
+            <div class="code-block">sudo ufw allow 12345/tcp</div>
+        </li>
+    </ul>
+
+    <hr>
+    <p>© 2025 MaxGamers16 | <a href="https://github.com/MaxGamers16/MaxGamers16.github.io">Репозиторий на GitHub</a></p>
 </body>
 </html>
