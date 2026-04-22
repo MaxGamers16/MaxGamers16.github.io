@@ -245,7 +245,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- HERO SECTION — как "WE DO DESIGN DIFFERENTLY" -->
+        <!-- HERO SECTION -->
         <div class="hero">
             <div class="pretitle"># TALK IN TERMINAL</div>
             <h1>
@@ -262,13 +262,13 @@
             </div>
         </div>
 
-        <!-- ПРЕДУПРЕЖДЕНИЕ — как заметный блок -->
+        <!-- ПРЕДУПРЕЖДЕНИЕ -->
         <div class="warning">
             ⚡ ВАЖНО: Виртуальные машины должны быть в одной сети.<br>
-            В VirtualBox используйте «Сетевой мост» или внутреннюю сеть.
+            В VirtualBox используйте <strong>«Сетевой мост»</strong> или внутреннюю сеть.
         </div>
 
-        <!-- БЫСТРЫЙ СТАРТ + ИНСТРУКЦИЯ (карточки с наклоном) -->
+        <!-- ИНСТРУКЦИЯ: БАЗОВЫЕ ШАГИ -->
         <div class="section-title">// ИНСТРУКЦИЯ</div>
         <div class="grid-2col">
             <div class="info-card">
@@ -294,27 +294,66 @@
                 <h3>04. ОБЩЕНИЕ</h3>
                 <p>Всё готово! Набирайте сообщения и жмите Enter.</p>
                 <p>Для выхода нажмите <code>Ctrl+C</code>.</p>
-                <p style="margin-top:1.5rem;"><a href="https://maxgamers16.github.io/">📖 Полная веб-инструкция →</a></p>
             </div>
         </div>
 
-        <!-- ДОПОЛНИТЕЛЬНЫЕ ЗАМЕТКИ (в стиле списка) -->
-        <div style="margin: 4rem 0;">
+        <!-- РАСШИРЕННАЯ ИНСТРУКЦИЯ ПО СЕТИ (НОВЫЙ БЛОК) -->
+        <div style="margin-top: 4rem;">
+            <div class="section-title" style="font-size: 1.8rem;">// НАСТРОЙКА СЕТИ В VIRTUALBOX</div>
+            <div class="grid-2col">
+                <div class="info-card">
+                    <h3>🌐 СЕТЕВОЙ МОСТ</h3>
+                    <p>Чтобы виртуальные машины видели друг друга и получали IP из одной подсети с хостом:</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Откройте настройки VM → <strong>Сеть</strong>.</li>
+                        <li>Тип подключения: <strong>Сетевой мост</strong>.</li>
+                        <li>Выберите ваш физический сетевой адаптер (обычно eth0 или Wi‑Fi).</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">✅ IP-адрес будет выглядеть примерно как <code>192.168.1.5</code> или <code>192.168.0.10</code>.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📡 КАК УЗНАТЬ IP</h3>
+                    <p>На каждой виртуальной машине выполните:</p>
+                    <div class="code-block">ip a | grep inet</div>
+                    <p>Ищите адрес, начинающийся с <code>192.168.</code> или <code>10.0.</code>. Это и есть IP в локальной сети.</p>
+                    <p style="margin-top: 1rem;"><strong>Запомните:</strong> IP может меняться после перезагрузки, если не настроен статический адрес.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ЧТО ДЕЛАТЬ, ЕСЛИ НЕ ПОДКЛЮЧАЕТСЯ -->
+        <div style="margin-top: 3rem;">
             <ul class="steps-list">
                 <li>
-                    <strong>Порт и файрвол</strong>
-                    Если подключение не проходит, откройте порт 12345:
-                    <div class="code-block">sudo ufw allow 12345/tcp</div>
+                    <strong>❓ IP отличается от примера?</strong>
+                    Это нормально! Главное, чтобы оба IP были из одной подсети (например, <code>192.168.1.X</code>). Вводите именно тот IP, который показала команда <code>ip a</code> на сервере.
                 </li>
                 <li>
-                    <strong>Архив содержит</strong>
-                    <code>server.py</code> и <code>client.py</code>. Актуальная версия всегда в 
-                    <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/releases/latest">Releases</a>.
+                    <strong>🚫 Другой человек не может подключиться?</strong>
+                    <ul style="margin-top: 0.8rem; margin-left: 1.5rem;">
+                        <li>Убедитесь, что обе VM действительно в <strong>одной локальной сети</strong> (LAN). При использовании NAT они изолированы.</li>
+                        <li>Проверьте, не блокирует ли файрвол порт 12345 на сервере:
+                            <div class="code-block">sudo ufw allow 12345/tcp</div>
+                        </li>
+                        <li>Попробуйте пропинговать сервер с клиента: <code>ping 192.168.X.X</code>. Если пинг не проходит — проблема на уровне сети VirtualBox.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>🔄 Всё равно не работает?</strong>
+                    Переключите обе VM на <strong>«Внутренняя сеть»</strong> (Internal Network) с одинаковым именем. Тогда они будут видеть только друг друга, но не получат доступ в интернет.
                 </li>
             </ul>
         </div>
 
-        <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ как на скриншоте -->
+        <!-- ССЫЛКА НА ПОЛНУЮ ИНСТРУКЦИЮ (ПЕРЕНЕСЕНА СЮДА) -->
+        <div style="text-align: center; margin: 4rem 0 2rem;">
+            <a href="https://maxgamers16.github.io/" class="btn btn-outline" style="padding: 1rem 3rem; font-size: 1.2rem;">
+                📖 ПОЛНАЯ ВЕБ-ИНСТРУКЦИЯ
+            </a>
+            <p style="margin-top: 1rem; color: #888;">Там ещё больше деталей, советов и скриншотов.</p>
+        </div>
+
+        <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ -->
         <div class="footer-contact">
             <div class="contact-line">CONTACT //</div>
             <div class="contact-details">
