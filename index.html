@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debian Chat · MaxGamers16</title>
-    <!-- Подключаем современный шрифт -->
+    <title>DEBIAN CHAT · MaxGamers16</title>
+    <!-- Шрифты: смесь современного гротеска и моноширинного -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,315 +16,315 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        /* Тёмная тема (определяется автоматически) */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #0b1120;
-                color: #e2e8f0;
-            }
-            .card {
-                background: #1e293b !important;
-                border: 1px solid #334155 !important;
-            }
-            .code-block {
-                background: #0f172a !important;
-                color: #cbd5e1 !important;
-                border: 1px solid #334155;
-            }
-            .warning {
-                background: #332211 !important;
-                border-left-color: #f59e0b !important;
-                color: #fcd34d !important;
-            }
-            a {
-                color: #90cdf4;
-            }
-            .btn {
-                background: #2563eb !important;
-                color: white !important;
-            }
-            .btn:hover {
-                background: #1d4ed8 !important;
-            }
-            .badge {
-                background: #334155 !important;
-                color: #cbd5e1 !important;
-            }
+            background: #0D0D0D;
+            color: #F5F5F5;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            padding: 2rem 1.5rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Карточка */
-        .card {
-            background: white;
-            border-radius: 24px;
-            padding: 2rem 2rem 1.8rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s, box-shadow 0.2s;
+        /* --- ЗАГОЛОВОК В СТИЛЕ "WE DO DESIGN DIFFERENTLY" --- */
+        .hero {
+            margin-bottom: 5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 3rem;
         }
 
-        .card:hover {
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        .pretitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #A0A0A0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-weight: 800;
+            line-height: 0.9;
+            text-transform: uppercase;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
-        h1 .badge {
-            font-size: 0.9rem;
-            font-weight: 500;
-            background: #e2e8f0;
-            color: #1e293b;
-            padding: 0.25rem 0.8rem;
-            border-radius: 30px;
-            letter-spacing: normal;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 1.5rem 0 1rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
-
-        h2:first-of-type {
-            margin-top: 0;
+        h1 .line2 {
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 2px #00FFAA;
+            text-stroke: 2px #00FFAA;
         }
 
         .subhead {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 1.8rem;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            color: #B0B0B0;
+            max-width: 600px;
+            font-weight: 400;
         }
 
-        /* Кнопки */
+        /* --- КНОПКИ В НЕБРЕЖНОМ СТИЛЕ --- */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin: 1.5rem 0;
+            gap: 20px;
+            margin-top: 2.5rem;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #0f172a;
-            color: white;
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            border-radius: 60px;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
             text-decoration: none;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-            box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            font-size: 1rem;
+            padding: 1rem 2.5rem;
+            border: 2px solid #00FFAA;
+            color: #00FFAA;
+            background: transparent;
+            transition: 0.2s;
+            letter-spacing: 1px;
+            position: relative;
+            box-shadow: 6px 6px 0 #00FFAA;
         }
 
         .btn:hover {
-            background: #1e293b;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.1);
+            background: #00FFAA;
+            color: #0D0D0D;
+            box-shadow: 2px 2px 0 #00FFAA;
+            transform: translate(4px, 4px);
         }
 
         .btn-outline {
-            background: transparent;
-            color: #0f172a;
-            border: 1px solid #cbd5e1;
+            border: 2px solid #555;
+            color: #CCC;
+            box-shadow: 6px 6px 0 #333;
         }
 
         .btn-outline:hover {
-            background: #f1f5f9;
-            color: #0f172a;
+            background: #333;
+            color: #FFF;
+            box-shadow: 2px 2px 0 #333;
+            transform: translate(4px, 4px);
         }
 
-        /* Блоки с кодом */
-        .code-block {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 1rem 1.5rem;
-            border-radius: 16px;
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Cascadia Code', 'Consolas', monospace;
-            font-size: 0.95rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-            border: 1px solid #334155;
+        /* --- СЕКЦИИ С ИНСТРУКЦИЯМИ (КАРТОЧКИ С НАКЛОНОМ) --- */
+        .section-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 4rem 0 2rem;
+            text-transform: uppercase;
+            border-left: 8px solid #00FFAA;
+            padding-left: 1.5rem;
         }
 
-        .inline-code {
-            background: #e2e8f0;
-            color: #0f172a;
-            padding: 0.2rem 0.5rem;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9em;
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        /* Предупреждение */
-        .warning {
-            background: #fef9c3;
-            border-left: 6px solid #eab308;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            color: #713f12;
-            font-weight: 500;
-            margin: 1.5rem 0;
+        .info-card {
+            background: #151515;
+            padding: 2rem;
+            border: 1px solid #2A2A2A;
+            transform: rotate(-0.5deg);
+            transition: transform 0.2s;
         }
 
-        /* Список шагов */
-        .steps {
-            list-style: none;
-            counter-reset: step-counter;
-            margin: 1.5rem 0;
+        .info-card:nth-child(even) {
+            transform: rotate(0.8deg);
+            margin-top: 10px;
         }
 
-        .steps li {
-            counter-increment: step-counter;
-            margin-bottom: 1.2rem;
-            padding-left: 2.5rem;
-            position: relative;
-            font-weight: 500;
+        .info-card:hover {
+            transform: rotate(0deg);
+            border-color: #00FFAA;
         }
 
-        .steps li::before {
-            content: counter(step-counter);
-            background: #0f172a;
-            color: white;
+        .info-card h3 {
+            font-size: 1.8rem;
             font-weight: 600;
-            width: 28px;
-            height: 28px;
-            border-radius: 12px;
-            display: inline-flex;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .code-block {
+            background: #000;
+            padding: 1.2rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            border-left: 4px solid #00FFAA;
+            margin: 1.2rem 0;
+            color: #BBFFEE;
+            overflow-x: auto;
+        }
+
+        .warning {
+            background: #1A1A00;
+            border-left: 6px solid #FFD700;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-weight: 500;
+            color: #FFE270;
+            transform: rotate(-0.3deg);
+        }
+
+        .steps-list {
+            list-style: none;
+        }
+
+        .steps-list li {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 1.5rem;
+        }
+
+        .steps-list strong {
+            color: #00FFAA;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- ФУТЕР В СТИЛЕ СКРИНШОТА --- */
+        .footer-contact {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 2px solid #333;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 0.9rem;
         }
 
-        /* Футер */
-        .footer {
-            text-align: center;
-            margin-top: 2rem;
-            color: #64748b;
-            font-size: 0.9rem;
+        .contact-line {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
         }
 
-        .footer a {
+        .contact-details {
+            display: flex;
+            gap: 40px;
+            color: #AAA;
+        }
+
+        .contact-details span {
+            color: #00FFAA;
+            margin-right: 8px;
+        }
+
+        a {
             color: inherit;
             text-decoration: underline;
-            text-underline-offset: 3px;
+            text-underline-offset: 4px;
+            text-decoration-color: #00FFAA;
         }
 
         /* Адаптив */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-                flex-wrap: wrap;
+        @media (max-width: 700px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
             }
-            .card {
-                padding: 1.5rem;
+            h1 {
+                font-size: 3.5rem;
+            }
+            .footer-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Заголовок -->
-        <div class="card">
+        <!-- HERO SECTION — как "WE DO DESIGN DIFFERENTLY" -->
+        <div class="hero">
+            <div class="pretitle"># TALK IN TERMINAL</div>
             <h1>
-                💬 Debian Chat
-                <span class="badge">v1.0 · TCP</span>
+                DEBIAN<br>
+                <span class="line2">CHAT 1.0</span>
             </h1>
             <div class="subhead">
-                Простой чат на Python для виртуальных машин Debian 13.  
-                Общайтесь между VM в локальной сети быстро и без лишнего.
+                Простой TCP‑чат на Python для виртуальных машин.<br>
+                Общайтесь между VM в локальной сети.
             </div>
             <div class="btn-group">
-                <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/releases/latest" class="btn">
-                    ⬇ Скачать python-code.zip
-                </a>
-                <a href="https://github.com/MaxGamers16/MaxGamers16.github.io" class="btn btn-outline">
-                    GitHub Repo
-                </a>
+                <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/releases/latest" class="btn">⬇ СКАЧАТЬ ZIP</a>
+                <a href="https://github.com/MaxGamers16/MaxGamers16.github.io" class="btn btn-outline">GITHUB REPO</a>
             </div>
-            <p style="color: #64748b; margin-top: 1rem;">
-                📦 Архив содержит <code class="inline-code">server.py</code> и <code class="inline-code">client.py</code>.
-            </p>
         </div>
 
-        <!-- Инструкция -->
-        <div class="card">
-            <h2>🚀 Быстрый старт в Debian 13</h2>
-            
-            <div class="warning">
-                ⚠️ Убедитесь, что виртуальные машины находятся в одной сети (VirtualBox: «Сетевой мост» или внутренняя сеть).
+        <!-- ПРЕДУПРЕЖДЕНИЕ — как заметный блок -->
+        <div class="warning">
+            ⚡ ВАЖНО: Виртуальные машины должны быть в одной сети.<br>
+            В VirtualBox используйте «Сетевой мост» или внутреннюю сеть.
+        </div>
+
+        <!-- БЫСТРЫЙ СТАРТ + ИНСТРУКЦИЯ (карточки с наклоном) -->
+        <div class="section-title">// ИНСТРУКЦИЯ</div>
+        <div class="grid-2col">
+            <div class="info-card">
+                <h3>01. УСТАНОВКА</h3>
+                <p>Убедитесь, что Python 3 установлен:</p>
+                <div class="code-block">sudo apt update && sudo apt install python3 -y</div>
+                <p>Скачайте архив и распакуйте:</p>
+                <div class="code-block">unzip python-code.zip</div>
             </div>
+            <div class="info-card">
+                <h3>02. СЕРВЕР</h3>
+                <p>На первой VM (сервер) выполните:</p>
+                <div class="code-block">python3 server.py</div>
+                <p>Появится сообщение о запуске на порту <strong>12345</strong>.</p>
+            </div>
+            <div class="info-card">
+                <h3>03. КЛИЕНТ</h3>
+                <p>На второй VM запустите клиент:</p>
+                <div class="code-block">python3 client.py</div>
+                <p>Введите IP сервера (узнать командой <code>ip a</code>).</p>
+            </div>
+            <div class="info-card">
+                <h3>04. ОБЩЕНИЕ</h3>
+                <p>Всё готово! Набирайте сообщения и жмите Enter.</p>
+                <p>Для выхода нажмите <code>Ctrl+C</code>.</p>
+                <p style="margin-top:1.5rem;"><a href="https://maxgamers16.github.io/">📖 Полная веб-инструкция →</a></p>
+            </div>
+        </div>
 
-            <ol class="steps">
+        <!-- ДОПОЛНИТЕЛЬНЫЕ ЗАМЕТКИ (в стиле списка) -->
+        <div style="margin: 4rem 0;">
+            <ul class="steps-list">
                 <li>
-                    <strong>Установите Python 3</strong> (если ещё нет):
-                    <div class="code-block">sudo apt update && sudo apt install python3 -y</div>
-                </li>
-                <li>
-                    <strong>Скачайте архив</strong> на обе виртуальные машины и распакуйте:
-                    <div class="code-block">unzip python-code.zip</div>
-                </li>
-                <li>
-                    <strong>На сервере (VM1):</strong>
-                    <div class="code-block">python3 server.py</div>
-                    Появится сообщение <em>«Сервер запущен на порту 12345...»</em>.
-                </li>
-                <li>
-                    <strong>На клиенте (VM2):</strong>
-                    <div class="code-block">python3 client.py</div>
-                    Введите IP-адрес сервера (узнать можно командой <code class="inline-code">ip a</code>).
-                </li>
-            </ol>
-
-            <h2>🛠️ Полезные заметки</h2>
-            <ul style="margin-left: 1.5rem; list-style-type: '🔹 ';">
-                <li style="margin-bottom: 0.5rem;">Порт по умолчанию <strong>12345</strong>. Изменить можно в переменной <code class="inline-code">PORT</code> внутри скриптов.</li>
-                <li style="margin-bottom: 0.5rem;">Если подключение не устанавливается, разрешите порт в файрволе:
+                    <strong>Порт и файрвол</strong>
+                    Если подключение не проходит, откройте порт 12345:
                     <div class="code-block">sudo ufw allow 12345/tcp</div>
                 </li>
-                <li>Для выхода из чата нажмите <code class="inline-code">Ctrl+C</code>.</li>
+                <li>
+                    <strong>Архив содержит</strong>
+                    <code>server.py</code> и <code>client.py</code>. Актуальная версия всегда в 
+                    <a href="https://github.com/MaxGamers16/MaxGamers16.github.io/releases/latest">Releases</a>.
+                </li>
             </ul>
         </div>
 
-        <!-- О проекте -->
-        <div class="card" style="text-align: center;">
-            <p style="margin-bottom: 0.5rem;">🧑‍💻 Автор: <strong>MaxGamers16</strong></p>
-            <p>⭐ Не забудьте поставить звёздочку репозиторию, если проект оказался полезным!</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://github.com/MaxGamers16" style="text-decoration: none; color: inherit;">github.com/MaxGamers16</a>
+        <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ как на скриншоте -->
+        <div class="footer-contact">
+            <div class="contact-line">CONTACT //</div>
+            <div class="contact-details">
+                <div><span>📧</span> maxgamers16@github</div>
+                <div><span>🌐</span> maxgamers16.github.io</div>
+                <div><span>💬</span> GitHub Issues</div>
             </div>
         </div>
-
-        <div class="footer">
-            📡 Работает на <a href="https://pages.github.com" target="_blank">GitHub Pages</a> · Обновлено 2025
+        <div style="margin-top: 2rem; font-family: 'Space Mono', monospace; color: #666; text-align: right;">
+            WE DO CODE DIFFERENTLY
         </div>
     </div>
 </body>
